@@ -48,7 +48,7 @@ public class App {
                     }
                     String userEntry = bufferedReader.readLine();
 
-                    if(!ticTacToe.addLetterToBoard(Integer.parseInt(userEntry))){
+                    if(ticTacToe.getGameBoard()[Integer.parseInt(userEntry)-1].equals("x") || ticTacToe.getGameBoard()[Integer.parseInt(userEntry)-1].equals("o")){
                         System.out.println("That has already been chosen");
                     } else {
                         ticTacToe.addLetterToBoard(Integer.parseInt(userEntry));
