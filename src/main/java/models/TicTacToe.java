@@ -75,5 +75,11 @@ public class TicTacToe {
         }
     }
 
-
+    public boolean drawCheck(){
+        if(turnCounter == 11){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

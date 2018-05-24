@@ -132,5 +132,19 @@ public class TicTacToeTest {
         testTicTacToe.letterUpdate();
         assertEquals(true, testTicTacToe.winCheck());
     }
+    @Test
+    public void drawCheck_checksForADraw_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        testTicTacToe.turnIncrement();
+        assertEquals(true, testTicTacToe.drawCheck());
+    }
 
 }

@@ -74,6 +74,9 @@ public class App {
                         ticTacToe.turnIncrement();
                         ticTacToe.letterUpdate();
                         ticTacToe.winCheck();
+                        if(ticTacToe.drawCheck()){
+                            System.out.println("It's a tie!");
+                        }
                     }
                     if (ticTacToe.winCheck()) {
                         System.out.println("You won brah.");
