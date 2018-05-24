@@ -69,4 +69,29 @@ public class TicTacToeTest {
         testTicTacToe.setGameBoardForTest(8, "x");
         assertEquals(true, testTicTacToe.winCheck());
     }
+    @Test
+    public void winCheck_checksForAVerticalWinAt0_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.setGameBoardForTest(0, "x");
+        testTicTacToe.setGameBoardForTest(3, "x");
+        testTicTacToe.setGameBoardForTest(6, "x");
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+    @Test
+    public void winCheck_checksForAVerticalWinAt1_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.setGameBoardForTest(1, "x");
+        testTicTacToe.setGameBoardForTest(4, "x");
+        testTicTacToe.setGameBoardForTest(7, "x");
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+    @Test
+    public void winCheck_checksForAVerticalWinAt2_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.setGameBoardForTest(2, "x");
+        testTicTacToe.setGameBoardForTest(5, "x");
+        testTicTacToe.setGameBoardForTest(8, "x");
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+
 }
