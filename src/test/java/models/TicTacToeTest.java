@@ -94,4 +94,43 @@ public class TicTacToeTest {
         assertEquals(true, testTicTacToe.winCheck());
     }
 
+    @Test
+    public void winCheck_checksForADiagonalWinAt0_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.setGameBoardForTest(0, "x");
+        testTicTacToe.setGameBoardForTest(4, "x");
+        testTicTacToe.setGameBoardForTest(8, "x");
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+
+    @Test
+    public void winCheck_checksForADiagonalWinAt2_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.setGameBoardForTest(2, "x");
+        testTicTacToe.setGameBoardForTest(4, "x");
+        testTicTacToe.setGameBoardForTest(6, "x");
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+
+    @Test
+    public void winCheck_checksLiveGameWin_true() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.addLetterToBoard(1);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        testTicTacToe.addLetterToBoard(5);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        testTicTacToe.addLetterToBoard(2);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        testTicTacToe.addLetterToBoard(6);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        testTicTacToe.addLetterToBoard(3);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        assertEquals(true, testTicTacToe.winCheck());
+    }
+
 }

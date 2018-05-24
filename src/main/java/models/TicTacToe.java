@@ -66,6 +66,10 @@ public class TicTacToe {
             return true;
         } else if (gameBoard[2].equals(gameBoard[5]) && gameBoard[5].equals(gameBoard[8])) {
             return true;
+        } else if (gameBoard[0].equals(gameBoard[4]) && gameBoard[4].equals(gameBoard[8])) {
+            return true;
+        } else if (gameBoard[2].equals(gameBoard[4]) && gameBoard[4].equals(gameBoard[6])) {
+            return true;
         } else {
             return false;
         }
