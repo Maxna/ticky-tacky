@@ -22,7 +22,7 @@ public class App {
 
             TicTacToe ticTacToe = new TicTacToe();
             try {
-                while(!ticTacToe.winCheck()) {
+                while(!ticTacToe.winCheck() && !ticTacToe.drawCheck()) {
 
                     for (String element: firstBoardLine)
                     {
@@ -73,12 +73,10 @@ public class App {
                         } else System.out.println("error");
                         ticTacToe.turnIncrement();
                         ticTacToe.letterUpdate();
-                        ticTacToe.winCheck();
-                        if(ticTacToe.drawCheck()){
-                            System.out.println("It's a tie!");
-                        }
                     }
-                    if (ticTacToe.winCheck()) {
+                    if(ticTacToe.drawCheck()){
+                        System.out.println("It's a tie!");
+                    } else if (ticTacToe.winCheck()) {
                         System.out.println("You won brah.");
                     }
                 }

@@ -76,7 +76,7 @@ public class TicTacToe {
     }
 
     public boolean drawCheck(){
-        if(turnCounter == 11){
+        if(turnCounter == 11 && winCheck() == false){
             return true;
         } else {
             return false;
