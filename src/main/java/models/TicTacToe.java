@@ -40,6 +40,13 @@ public class TicTacToe {
     public void turnIncrement(){
         this.turnCounter += 1;
     }
+    public void letterUpdate(){
+        if(turnCounter%2 != 0){
+            this.currentUserLetter = "o";
+        } else {
+            this.currentUserLetter = "x";
+        }
+    }
 
 
 }

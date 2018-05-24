@@ -17,6 +17,7 @@ public class TicTacToeTest {
         testTicTacToe.addLetterToBoard(1);
         assertEquals("x", testTicTacToe.getGameBoard()[0]);
     }
+
     @Test
     public void turnUpdate_changesCurrentTurnCounter_3() throws Exception {
         TicTacToe testTicTacToe = new TicTacToe();
@@ -24,13 +25,24 @@ public class TicTacToeTest {
         testTicTacToe.turnIncrement();
         assertEquals(3, testTicTacToe.getTurnCounter());
     }
+
     @Test
-    public void letterUpdate_changesCurrentUserLetterBasedOnTurn_3() throws Exception {
+    public void letterUpdate_changesCurrentUserLetterBasedOnTurn_o() throws Exception {
         TicTacToe testTicTacToe = new TicTacToe();
         testTicTacToe.addLetterToBoard(1);
         testTicTacToe.turnIncrement();
-        testTicTacToe.tur
-        assertEquals("o", testTicTacToe.getTurnCounter());
+        testTicTacToe.letterUpdate();
+        assertEquals("o", testTicTacToe.getCurrentUserLetter());
+    }
+
+    @Test
+    public void addLetterToBoards_addsOToBoardOnSecondTurn_o() throws Exception {
+        TicTacToe testTicTacToe = new TicTacToe();
+        testTicTacToe.addLetterToBoard(1);
+        testTicTacToe.turnIncrement();
+        testTicTacToe.letterUpdate();
+        testTicTacToe.addLetterToBoard(2);
+        assertEquals("o", testTicTacToe.getGameBoard()[1]);
     }
 
 }
